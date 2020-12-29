@@ -22,7 +22,7 @@ jobs:
 
       - name: Publish
         run: |
-          dotnet publish -c Release -o dotnetcoretemplate ./dotnetcore-template
+          dotnet publish -c Release -o dist
 
       - name: Test
         run: |

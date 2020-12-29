@@ -3,3 +3,4 @@ bin/*
 obj/*
 test/bin/*
 test/obj/*
+dist/
