@@ -18,7 +18,7 @@ jobs:
 
       - name: Build
         run: |
-          dotnet build --configuration Release ./dotnetcore-template/dotnetcore-template.csproj
+          dotnet build --configuration Release ./dotnetcore-template.csproj
 
       - name: Publish
         run: |
