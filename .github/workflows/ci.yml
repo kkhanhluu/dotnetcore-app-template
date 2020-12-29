@@ -1,0 +1,27 @@
+name: .NET Core
+
+on: [push]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.100
+
+      - name: Build
+        run: |
+          dotnet build --configuration Release ./dotnetcore-template/dotnetcore-template.csproj
+
+      - name: Publish
+        run: |
+          dotnet publish -c Release -o dotnetcoretemplate ./dotnetcore-template
+
+      - name: Test
+        run: |
+          cd ./test 
+          dotnet test
